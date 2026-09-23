@@ -34,6 +34,26 @@ strukturnya — tampilan diubah dari berkas CSS.
 Tulis di README ini, satu paragraf per bagian tambahan: elemen apa, untuk siapa,
 dan menjawab apa. Lalu catat hasil evaluasinya (Lembar I.6):
 
+## Design token halaman profil
+ 
+- Berkas gaya yang akan dibuat: tokens.css, base.css,
+  layout.css, komponen.css, tema.css
+- Warna utama: #1D3A8C (biru), dipilih karena ...
+ 
+### Token yang saya tetapkan
+ 
+| Token | Nilai | Untuk apa |
+|---|---|---|
+| --color-primary | #38BDF8 | tombol, tautan, penanda |
+| --color-fg | #0F172A | warna teks utama |
+| --color-bg | #F8FAFC | latar halaman |
+| --radius-md | 0.5rem | sudut tombol dan kartu |
+| --space-4 | 1rem | jarak standar antar elemen |
+ 
+Kriteria selesai saya: mengubah --color-primary di satu baris
+harus mengubah warna tombol, tautan, judul, dan garis fokus.
+
+
 - W3C — Nu Html Checker: jumlah error setelah penambahan (target 0)
 - WCAG — kontras AA di tema terang dan gelap
 - WCAG — seluruh bagian baru dapat dicapai dengan Tab
