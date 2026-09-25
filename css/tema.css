@@ -1,27 +1,60 @@
-/* Ikut pengaturan sistem: lapis semantik saja yang diganti */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg:      #0F172A;
-    --color-fg:      #E2E8F0;
-    --color-surface: #1E293B;
-    --color-border:  #334155;
-    --color-primary: #38BDF8;   /* versi lebih terang agar kontras tetap lolos */
-    --color-danger:  #FF8A8A;
-    --color-focus:   #FFC000;
-    --shadow-1:      0 1px 3px rgba(0, 0, 0, .45);
+    --color-bg: #0f172a;
+    --color-fg: #e2e8f0;
+    --color-surface: #111827;
+    --color-surface-soft: #1e293b;
+    --color-border: #334155;
+    --color-primary: #7dd3fc;
+    --color-primary-soft: #38bdf8;
+    --color-danger: #fca5a5;
+    --color-focus: #facc15;
+    --color-muted: #cbd5e1;
+    --shadow-1: 0 12px 30px rgba(2, 6, 23, 0.45);
   }
 }
 
-.pengalih-tema { position: absolute; opacity: 0; pointer-events: none; }
- 
-/* Pilihan manual HARUS berada setelah blok media query,
-   supaya menang saat keduanya menyala bersamaan. */
+.pengalih-tema {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tombol-tema {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-3);
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface-soft);
+  color: var(--color-fg);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tombol-tema:hover,
+.tombol-tema:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
 :root:has(#tema:checked) {
-  --color-bg:      #0F172A;
-  --color-fg:      #E2E8F0;
-  --color-surface: #1E293B;
-  --color-border:  #334155;
-  --color-primary: #7DA9F7;
-  --color-danger:  #FF8A8A;
-  --color-focus:   #FFC000;
+  --color-bg: #0f172a;
+  --color-fg: #e2e8f0;
+  --color-surface: #111827;
+  --color-surface-soft: #1e293b;
+  --color-border: #334155;
+  --color-primary: #7dd3fc;
+  --color-primary-soft: #38bdf8;
+  --color-danger: #fca5a5;
+  --color-focus: #facc15;
+  --color-muted: #cbd5e1;
+}
+
+:root:has(#tema:checked) .tombol-tema {
+  background: rgba(125, 211, 252, 0.12);
+  border-color: rgba(125, 211, 252, 0.5);
 }
