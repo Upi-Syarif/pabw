@@ -76,3 +76,5 @@ diselesaikan di luar kelas sampai pukul 23.59 hari yang sama.
 Folder `worksheet-p4/` di dalam repositori GitHub Anda sendiri, berisi
 `profil.html`, `css/`, `media/`, dan `bukti/`. Sudah di-commit dan di-push
 sebelum **pukul 23.59 hari yang sama**. Tidak ada perpanjangan.
+
+Pengungkapan AI. js/app.js (struktur data, fungsi buatPerkenalan dan formatKeahlian, serta pemeriksaan filter/find/map/sort) disusun dengan bantuan Claude, lalu saya jalankan dan baca hasilnya di Console. Jawaban refleksi saya tulis ulang dengan kata-kata sendiri. Isi data profil, pemilihan karya, dan tahun proyek berasal dari saya.
