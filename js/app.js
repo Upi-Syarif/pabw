@@ -77,3 +77,5 @@ console.log(
   "Urutan asli tidak berubah:",
   urutanSebelum.join("|") === urutanSesudah.join("|")
 );
+
+export { profil, daftarProyek };
