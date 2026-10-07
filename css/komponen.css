@@ -94,3 +94,7 @@ textarea:user-invalid {
 .form-kolom:has(input:user-invalid) .pesan-galat {
   display: block;
 }
+
+.pesan-galat:not(:empty) {
+  display: block;
+}
