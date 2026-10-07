@@ -24,3 +24,20 @@ function render(daftar) {
 }
 
 render(daftarProyek);
+
+function tandaiTombolAktif(tombolAktif) {
+  tombolFilter.forEach((tombol) => {
+    tombol.classList.toggle("aktif", tombol === tombolAktif);
+  });
+}
+
+barisFilter.addEventListener("click", (event) => {
+  const tombol = event.target.closest("button");
+  if (!tombol) return;
+  const kategori = tombol.dataset.kategori;
+  const terpilih = daftarProyek.filter(
+    (proyek) => kategori === "semua" || proyek.jenis === kategori
+  );
+  tandaiTombolAktif(tombol);
+  render(terpilih);
+});
