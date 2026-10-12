@@ -83,6 +83,7 @@ console.log(
 async function muatNotisia() {
   try {
     const data = await ambilNotisia();
+    console.log(data);
     return { data, galat: "" };
   } catch (galat) {
     return { data: [], galat: galat.message };
