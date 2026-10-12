@@ -1,3 +1,5 @@
+import { ambilNotisia } from "./api.js";
+
 const profil = {
   nama: "Muhammad Lutfi Syarif",
   nim: "25523021",
@@ -78,4 +80,13 @@ console.log(
   urutanSebelum.join("|") === urutanSesudah.join("|")
 );
 
-export { profil, daftarProyek };
+async function muatNotisia() {
+  try {
+    const data = await ambilNotisia();
+    return { data, galat: "" };
+  } catch (galat) {
+    return { data: [], galat: galat.message };
+  }
+}
+
+export { profil, daftarProyek, muatNotisia };

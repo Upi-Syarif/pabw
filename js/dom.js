@@ -1,4 +1,4 @@
-import { daftarProyek } from "./app.js";
+import { daftarProyek, muatNotisia } from "./app.js";
 
 const wadah = document.querySelector("#daftar");
 const barisFilter = document.querySelector("#filter");
@@ -112,3 +112,28 @@ formKontak.addEventListener("submit", (event) => {
     aturanForm[hasil.indexOf(false)].kolom.focus();
   }
 });
+
+const daftarNotisia = document.querySelector("#notisia");
+const statusNotisia = document.querySelector("#status-notisia");
+
+async function tampilkanNotisia() {
+  statusNotisia.textContent = "Memuat notisia...";
+  const { data, galat } = await muatNotisia();
+  daftarNotisia.textContent = "";
+  if (galat) {
+    statusNotisia.textContent = "Gagal memuat notisia: " + galat;
+    return;
+  }
+  if (data.length === 0) {
+    statusNotisia.textContent = "Belum ada notisia.";
+    return;
+  }
+  statusNotisia.textContent = "";
+  data.slice(0, 10).forEach((butir) => {
+    const li = document.createElement("li");
+    li.textContent = butir.title;
+    daftarNotisia.append(li);
+  });
+}
+
+tampilkanNotisia();
